@@ -1,5 +1,7 @@
 ARG PY_VERSION=3.7-alpine3.9
-FROM python:$PY_VERSION as oled-base
+FROM armv6/python:$PY_VERSION as oled-base
+
+COPY qemu-arm-static /usr/bin
 
 WORKDIR /root/
 # Setup timezone
