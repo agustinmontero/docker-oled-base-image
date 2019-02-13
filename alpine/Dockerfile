@@ -1,5 +1,5 @@
 ARG PY_VERSION=3.7-alpine3.9
-FROM armv6/python:$PY_VERSION as oled-base
+FROM arm32v6/python:$PY_VERSION as oled-base
 
 COPY qemu-arm-static /usr/bin
 
