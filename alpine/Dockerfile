@@ -15,7 +15,13 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
 	zlib-dev \
 	&& apk add jpeg-dev
 
-COPY ./requirements.txt ./
-RUN pip3 install spidev && pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install spidev && pip3 install --no-cache-dir \
+	requests \
+	six \
+	urllib3 \
+	Adafruit-SSD1306 \
+	Pillow \
+	RPi.GPIO \
+	gpiozero
 
 RUN apk del .build-deps && rm -rf /var/cache/apk/*
